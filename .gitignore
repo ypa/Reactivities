@@ -38,3 +38,5 @@ msbuild.wrn
 
 # SQLite DB files
 */*.db*
+
+appsettings.json
