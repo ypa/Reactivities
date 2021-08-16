@@ -1,7 +1,25 @@
 import axios, { AxiosResponse } from 'axios';
 import { Activity } from '../models/activity';
 
+
+const sleep = (delay: number) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, delay)
+  })
+}
+
 axios.defaults.baseURL = 'http://localhost:5000/api'
+
+// For testing slow response loading indicator
+axios.interceptors.response.use(async response => {
+  try {
+    await sleep(1000);
+    return response;
+  } catch (error) {
+    console.log(error);
+    return await Promise.reject(error);
+  }
+})
 
 
 const responseBody = <T>(response: AxiosResponse<T>) => response.data;
