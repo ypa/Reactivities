@@ -1,38 +1,38 @@
 import React from 'react';
 import { Button, Card, Image } from 'semantic-ui-react';
-import { Activity } from '../../../app/models/activity';
+import { useStore } from '../../../app/stores/store';
 
-interface Props {
-  activity: Activity;
-  cancelSelectActivity: () => void;
-  openForm: (id: string) => void;
-}
+export default function ActivityDetails() {
+  const { activityStore } = useStore();
+  const {
+    selectedActivity: activity,
+    openForm,
+    cancelSelectedActivity,
+  } = activityStore;
 
-export default function ActivityDetails({
-  activity,
-  cancelSelectActivity,
-  openForm,
-}: Props) {
+  //if (!activity) <LoadingComponent />; // a hack to get around typescript not knowing activity
+  // won't be undefined as we have a guard in the calling code.
+
   return (
     <Card fluid>
-      <Image src={`/assets/categoryImages/${activity.category}.jpg`} />
+      <Image src={`/assets/categoryImages/${activity?.category}.jpg`} />
       <Card.Content>
-        <Card.Header>{activity.title}</Card.Header>
+        <Card.Header>{activity?.title}</Card.Header>
         <Card.Meta>
-          <span>{activity.date}</span>
+          <span>{activity?.date}</span>
         </Card.Meta>
-        <Card.Description>{activity.description}</Card.Description>
+        <Card.Description>{activity?.description}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <Button.Group widths="2">
           <Button
-            onClick={() => openForm(activity.id)}
+            onClick={() => openForm(activity?.id)}
             basic
             color="blue"
             content="Edit"
           />
           <Button
-            onClick={cancelSelectActivity}
+            onClick={cancelSelectedActivity}
             basic
             color="grey"
             content="Cancel"
