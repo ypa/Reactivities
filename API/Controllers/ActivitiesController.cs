@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
+    [AllowAnonymous]  // TODO: remove this after login is implemented on client side.
     public class ActivitiesController : BaseApiController
     {
         [HttpGet]
