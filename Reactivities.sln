@@ -1,4 +1,4 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{78F05087-F89F-49A8-9CB6-7639E2F64775}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{923ABD08-F0E4-49EC-9C8F-F90E281C79BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,5 +74,17 @@ Global
 		{923ABD08-F0E4-49EC-9C8F-F90E281C79BD}.Release|x64.Build.0 = Release|Any CPU
 		{923ABD08-F0E4-49EC-9C8F-F90E281C79BD}.Release|x86.ActiveCfg = Release|Any CPU
 		{923ABD08-F0E4-49EC-9C8F-F90E281C79BD}.Release|x86.Build.0 = Release|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Debug|x64.Build.0 = Debug|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Debug|x86.Build.0 = Debug|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Release|x64.ActiveCfg = Release|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Release|x64.Build.0 = Release|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Release|x86.ActiveCfg = Release|Any CPU
+		{841F7865-DD8A-46EF-A4C8-5BD9F5E1469B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
