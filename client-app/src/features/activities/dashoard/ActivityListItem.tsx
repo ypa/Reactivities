@@ -11,6 +11,14 @@ interface Props {
 export default function ActivityListItem({ activity }: Props) {
   return (
     <Segment.Group>
+      {activity.isCancelled && (
+        <Label
+          attached="top"
+          color="red"
+          content="Cancelled"
+          style={{ textAlign: 'center' }}
+        />
+      )}
       <Segment>
         <Item.Group>
           <Item>
