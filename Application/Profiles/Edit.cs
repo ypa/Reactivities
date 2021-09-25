@@ -44,6 +44,9 @@ namespace Application.Profiles
                 user.Bio = request.Bio ?? user.Bio;
                 user.DisplayName = request.DisplayName ?? user.DisplayName;
 
+                // will mark as success even if there is no change to user
+                _context.Entry(user).State = EntityState.Modified;
+
                 var success = await _context.SaveChangesAsync() > 0;
 
                 if (success) return Result<Unit>.Success(Unit.Value);
