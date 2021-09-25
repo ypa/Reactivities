@@ -6,7 +6,7 @@ namespace Domain
     {
         public int Id { get; set; }
 
-        public int Body { get; set; }
+        public string Body { get; set; }
 
         public AppUser Author { get; set; }
 
