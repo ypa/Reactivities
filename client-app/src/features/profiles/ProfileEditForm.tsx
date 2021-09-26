@@ -35,9 +35,9 @@ export default observer(function ProfileEditForm({ setEditMode }: Props) {
             content="Update profile"
             floated="right"
             disabled={!isValid || !dirty}
-          />{' '}
+          />
         </Form>
-      )}{' '}
+      )}
     </Formik>
   );
 });
