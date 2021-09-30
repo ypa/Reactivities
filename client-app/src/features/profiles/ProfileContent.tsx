@@ -5,12 +5,14 @@ import { Profile } from '../../app/models/profile';
 import ProfilePhotos from './ProfilePhotos';
 import ProfileAbout from './ProfileAbout';
 import ProfileFollowings from './ProfileFollowings';
+import { useStore } from '../../app/stores/store';
 
 interface Props {
   profile: Profile;
 }
 
 export default observer(function ProfileContent({ profile }: Props) {
+  const { profileStore } = useStore();
   const panes = [
     { menuItem: 'About', render: () => <ProfileAbout /> },
     { menuItem: 'Photos', render: () => <ProfilePhotos profile={profile} /> },
@@ -30,6 +32,7 @@ export default observer(function ProfileContent({ profile }: Props) {
       menu={{ fluid: true, vertical: true }}
       menuPosition="right"
       panes={panes}
+      onTabChange={(e, data) => profileStore.setActiveTab(data.activeIndex)}
     />
   );
 });
