@@ -80,7 +80,8 @@ const request = {
 }
 
 const Activities = {
-  list: () => request.get<PaginatedResult<Activity[]>>('/activities'),
+  list: (params: URLSearchParams) => axios.get<PaginatedResult<Activity[]>>('/activities', { params })
+    .then(responseBody),
   details: (id: string) => request.get<Activity>(`/activities/${id}`),
   create: (activity: ActivityFormValues) => request.post<void>('/activities', activity),
   update: (activity: ActivityFormValues) => request.put<void>(`/activities/${activity.id}`, activity),
