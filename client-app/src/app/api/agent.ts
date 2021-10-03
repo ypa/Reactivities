@@ -4,7 +4,7 @@ import { Activity, ActivityFormValues } from '../models/activity';
 import { history } from '../../index';
 import { store } from '../stores/store';
 import { User, UserFormValues } from '../models/user';
-import { Photo, Profile } from '../models/profile';
+import { Photo, Profile, UserActivity } from '../models/profile';
 import { PaginatedResult } from '../models/pagination';
 
 
@@ -109,7 +109,8 @@ const Profiles = {
   updateProfile: (profile: Partial<Profile>) => request.put(`/profiles`,
     profile),
   updateFollowing: (username: string) => request.post(`/follow/${username}`, {}),
-  listFollowings: (username: string, predicate: string) => request.get<Profile[]>(`/follow/${username}?predicate=${predicate}`)
+  listFollowings: (username: string, predicate: string) => request.get<Profile[]>(`/follow/${username}?predicate=${predicate}`),
+  listActivities: (username: string, predicate: string) => request.get<UserActivity[]>(`/profiles/${username}/activities?predicate=${predicate}`)
 }
 
 const agent = {
