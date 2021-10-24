@@ -107,7 +107,7 @@ namespace API.Controllers
         [HttpPost("fbLogin")]
         public async Task<ActionResult<UserDto>> FacebookLogin(string accessToken)
         {
-            var fbVerifyKeys = _config["Facebook:AppId"] + "|" + _config["Facbook:AppSecret"];
+            var fbVerifyKeys = _config["Facebook:AppId"] + "|" + _config["Facebook:AppSecret"];
 
             var verifyToken = await _httpClient
                 .GetAsync($"debug_token?input_token={accessToken}&access_token={fbVerifyKeys}");
