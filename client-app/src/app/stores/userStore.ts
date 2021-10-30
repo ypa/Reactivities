@@ -109,6 +109,7 @@ export default class UserStore {
   }
 
   refreshToken = async () => {
+    this.stopRefreshTokenTimer();
     try {
       const user = await agent.Account.refreshToken();
       runInAction(() => this.user = user);
